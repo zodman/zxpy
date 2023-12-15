@@ -189,6 +189,8 @@ def run_shell(command: str) -> str:
         output = stdout.read().decode()
         return output
 
+run= run_shell
+
 
 def run_shell_print(command: str) -> None:
     """Version of `run_shell` that prints out the response instead of returning a string."""
@@ -199,7 +201,7 @@ def run_shell_print(command: str) -> None:
                 print(decoder.decode(text), end="")
 
             print(decoder.decode(b"", final=True), end="")
-
+runp = run_shell_print
 
 def run_shell_alternate(command: str) -> tuple[str, str, int]:
     """Like run_shell but returns 3 values: stdout, stderr and return code"""
@@ -220,6 +222,7 @@ def run_shell_alternate(command: str) -> tuple[str, str, int]:
         stderr_text.decode(),
         process.returncode,
     )
+runa = run_shell_alternate
 
 
 def run_zxpy(
